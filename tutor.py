@@ -242,8 +242,9 @@ with col2:
 if st.session_state.student != []:
     logs_ref = db.collection("logs")
     for doc in logs_ref.stream():
+        log = doc.todict()
         if doc.id == f"logTutor{id}":
-            model = doc['model']
+            model = log['model']
         if model == True:
                 TUTOR_MODEL = True
         elif model == False:
@@ -259,6 +260,7 @@ if st.session_state.student != []:
                  "history": st.session_state.history,
                  "submitted": st.session_state.FormSubmitter
                  })
+    st.write(doc_ref.todict())
 
     # checkStudentExists(f"logs/logTutor{id}")
     # logSession(st.session_state, f"logs/logTutor{id}")
