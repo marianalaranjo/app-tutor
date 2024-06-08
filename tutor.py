@@ -234,6 +234,6 @@ with col2:
             st.rerun()
 
 if st.session_state.student != []:
-    checkStudentExists(f"logTutor{id}.txt")
-    logSession(st.session_state, f"logTutor{id}.txt")
+    checkStudentExists(f"logs/logTutor{id}.txt")
+    logSession(st.session_state, f"logs/logTutor{id}.txt")
 
