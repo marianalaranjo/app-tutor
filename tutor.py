@@ -240,8 +240,8 @@ with col2:
             st.rerun()
 
 if st.session_state.student != []:
-    logs_ref = db.collection("logs")
-    for doc in logs_ref.stream():
+    logs_ref = db.collection("logs").stream()
+    for doc in logs_ref:
         log = doc.todict()
         if doc.id == f"logTutor{id}":
             model = log['model']
