@@ -240,8 +240,7 @@ with col2:
             st.rerun()
 
 if st.session_state.student != []:
-
-    doc_ref = db.collection("logs").document(f"logTutor{id}")
+    doc_ref = db.collection("logs").document("logTeste")
     doc = doc_ref.get()
     if doc.exists:
         log = doc.todict()
