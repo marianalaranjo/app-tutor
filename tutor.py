@@ -240,15 +240,18 @@ with col2:
             st.rerun()
 
 if st.session_state.student != []:
-    logs_ref = db.collection("logs").stream()
-    for doc in logs_ref:
+
+    doc_ref = db.collection("logs").document(f"logTutor{id}")
+    doc = doc_ref.get()
+    if doc.exists:
         log = doc.todict()
         if doc.id == f"logTutor{id}":
             model = log['model']
-        if model == True:
+            if model == True:
                 TUTOR_MODEL = True
-        elif model == False:
-            TUTOR_MODEL = False
+            elif model == False:
+                TUTOR_MODEL = False
+
     doc_ref = db.collection("logs").document(f"logTutor{id}")
     doc_ref.set({ "model": st.session_state.model,
                  "student": st.session_state.student,
@@ -260,7 +263,6 @@ if st.session_state.student != []:
                  "history": st.session_state.history,
                  "submitted": st.session_state.FormSubmitter
                  })
-    st.write(doc_ref.todict())
 
     # checkStudentExists(f"logs/logTutor{id}")
     # logSession(st.session_state, f"logs/logTutor{id}")
