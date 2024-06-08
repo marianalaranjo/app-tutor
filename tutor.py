@@ -252,7 +252,7 @@ if st.session_state.student != []:
     #             TUTOR_MODEL = False
 
     doc_ref = db.collection("logs").document(f"logTutor{id}")
-    doc_ref.set({ "model": st.session_state.model,
+    doc_ref.set({"model": st.session_state.model,
                  "student": st.session_state.student,
                  "answers": st.session_state.answers,
                  "score": st.session_state.score,
