@@ -259,7 +259,7 @@ if st.session_state.student != []:
                  "disabled": st.session_state.disabled,
                  "setup": st.session_state.setup,
                  "messages": st.session_state.messages,
-                 "history": st.session_state.history,
+                 "history": st.session_state.history
                  })
 
     # checkStudentExists(f"logs/logTutor{id}")
