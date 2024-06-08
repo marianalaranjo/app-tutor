@@ -10,29 +10,35 @@ from langchain_core.prompts import MessagesPlaceholder
 from langchain_core.messages import HumanMessage, AIMessage
 from datetime import datetime
 import os.path
+from google.cloud import firestore
+from google.oauth2 import service_account
 
 ## CONFIG
 
+key_dict = json.loads(st.secrets["textkey"])
+creds = service_account.Credentials.from_service_account_info(key_dict)
+db = firestore.Client(credentials=creds, project="app-tutor")
+
 TUTOR_MODEL = random.choice([True, False])
 
-def logSession(session_history, filename):
-    f = open(filename, "a")
-    f.write("{0} -- {1}\n".format(datetime.now().strftime("%Y-%m-%d %H:%M"), session_history))
-    f.close()
+# def logSession(session_history, filename):
+#     f = open(filename, "a")
+#     f.write("{0} -- {1}\n".format(datetime.now().strftime("%Y-%m-%d %H:%M"), session_history))
+#     f.close()
 
-def checkStudentExists(filename):
-    if os.path.isfile(filename) is False:
-        return
-    with open(filename, 'r') as file_obj:
-        first_char = file_obj.read(1)
-        if not first_char:
-            return
-        else:
-            lines = file_obj.readlines()
-            if "'model': True" in lines[0]:
-                st.session_state.model = True
-            elif "'model': False" in lines[0]:
-                st.session_state.model = False
+# def checkStudentExists(filename):
+#     if os.path.isfile(filename) is False:
+#         return
+#     with open(filename, 'r') as file_obj:
+#         first_char = file_obj.read(1)
+#         if not first_char:
+#             return
+#         else:
+#             lines = file_obj.readlines()
+#             if "'model': True" in lines[0]:
+#                 st.session_state.model = True
+#             elif "'model': False" in lines[0]:
+#                 st.session_state.model = False
 
 
 prompt_template = ChatPromptTemplate.from_messages([
@@ -234,6 +240,26 @@ with col2:
             st.rerun()
 
 if st.session_state.student != []:
-    checkStudentExists(f"logs/logTutor{id}.txt")
-    logSession(st.session_state, f"logs/logTutor{id}.txt")
+    logs_ref = db.collection("logs")
+    for doc in logs_ref.stream():
+        if doc.id == f"logTutor{id}":
+            model = doc['model']
+        if model == True:
+                TUTOR_MODEL = True
+        elif model == False:
+            TUTOR_MODEL = False
+    doc_ref = db.collection("logs").document(f"logTutor{id}")
+    doc_ref.set({ "model": st.session_state.model,
+                 "student": st.session_state.student,
+                 "answers": st.session_state.answers,
+                 "score": st.session_state.score,
+                 "disabled": st.session_state.disabled,
+                 "setup": st.session_state.setup,
+                 "messages": st.session_state.messages,
+                 "history": st.session_state.history,
+                 "submitted": st.session_state.FormSubmitter
+                 })
+
+    # checkStudentExists(f"logs/logTutor{id}")
+    # logSession(st.session_state, f"logs/logTutor{id}")
 

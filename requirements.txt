@@ -2,3 +2,4 @@ langchain
 langchain-openai
 openai
 streamlit
+google-cloud-firestore
