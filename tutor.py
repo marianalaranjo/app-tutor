@@ -17,7 +17,7 @@ from google.oauth2.service_account import Credentials
 
 key_dict = json.loads(st.secrets["textkey"])
 creds = Credentials.from_service_account_info(key_dict)
-db = firestore.Client(credentials=creds, project="app-tutor")
+db = firestore.Client(credentials=creds, project="app-tutor-393a9")
 
 TUTOR_MODEL = random.choice([True, False])
 
@@ -252,7 +252,7 @@ if st.session_state.student != []:
     #             TUTOR_MODEL = False
 
     doc_ref = db.collection("logs").document(f"logTutor{id}")
-    doc_ref.set({"model": True,
+    doc_ref.set({"model": st.session_state.model,
                  "student": "teste",
                  "answers": "teste",
                  "score": "30",
