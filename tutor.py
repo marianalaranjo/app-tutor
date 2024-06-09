@@ -253,14 +253,13 @@ if st.session_state.student != []:
 
     doc_ref = db.collection("logs").document(f"logTutor{id}")
     doc_ref.set({"model": True,
-                "student": "teste",
-                "answers": "teste",
-                "score": "30",
-                "disabled": False,
-                "setup": "teste",
-                "messages": "teste",
-                "history": "teste"
-                })
+                 "student": "teste",
+                 "answers": "teste",
+                 "score": "30",
+                 "disabled": False,
+                 "setup": "teste",
+                 "messages": "teste",
+                 "history": "teste"})
 
     # doc_ref.set({"date": datetime.datetime.now(),
     #             "model": True,
