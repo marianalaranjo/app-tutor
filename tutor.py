@@ -15,7 +15,7 @@ from google.oauth2.service_account import Credentials
 
 ## CONFIG
 
-key_dict = json.loads(st.secrets["firebase"]['textkey'])
+key_dict = json.loads(st.secrets["textkey"])
 creds = Credentials.from_service_account_info(key_dict)
 db = firestore.Client(credentials=creds, project="app-tutor")
 
