@@ -15,7 +15,7 @@ from google.oauth2 import service_account
 
 ## CONFIG
 
-key_dict = json.loads(st.secrets["textkey"])
+key_dict = json.loads(st.secrets["FIREBASE"])
 creds = service_account.Credentials.from_service_account_info(key_dict)
 db = firestore.Client(credentials=creds, project="app-tutor")
 
@@ -255,7 +255,7 @@ if st.session_state.student != []:
     doc_ref.set({"model": True,
                 "student": "teste",
                 "answers": "teste",
-                "score": "30",
+                "score": "15",
                 "disabled": False,
                 "setup": "teste",
                 "messages": "teste",
