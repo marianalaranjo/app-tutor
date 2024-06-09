@@ -252,6 +252,7 @@ if st.session_state.student != []:
     #             TUTOR_MODEL = False
 
     doc_ref = db.collection("logs").document(f"logTutor{id}")
+    st.write(doc_ref.todict())
     doc_ref.set({"model": True,
                 "student": "teste",
                 "answers": "teste",
