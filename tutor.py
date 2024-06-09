@@ -11,12 +11,12 @@ from langchain_core.messages import HumanMessage, AIMessage
 from datetime import datetime
 import os.path
 from google.cloud import firestore
-from google.oauth2 import service_account
+from google.oauth2.service_account import Credentials
 
 ## CONFIG
 
-key_dict = json.loads(st.secrets["FIREBASE"])
-creds = service_account.Credentials.from_service_account_info(key_dict)
+key_dict = json.loads(st.secrets["firebase"]['textkey'])
+creds = Credentials.from_service_account_info(key_dict)
 db = firestore.Client(credentials=creds, project="app-tutor")
 
 TUTOR_MODEL = random.choice([True, False])
@@ -251,18 +251,16 @@ if st.session_state.student != []:
     #         elif model == False:
     #             TUTOR_MODEL = False
 
-    doc_ref = db.collection("logs")
-    values = {"name": f"logTutor{id}",
-                "model": True,
+    doc_ref = db.collection("logs").document(f"logTutor{id}")
+    doc_ref.set({"model": True,
                 "student": "teste",
                 "answers": "teste",
-                "score": "15",
+                "score": "30",
                 "disabled": False,
                 "setup": "teste",
                 "messages": "teste",
                 "history": "teste"
-                }
-    doc_ref.document().create(values)
+                })
 
     # doc_ref.set({"date": datetime.datetime.now(),
     #             "model": True,
