@@ -15,9 +15,9 @@ from google.oauth2.service_account import Credentials
 
 ## CONFIG
 
-key_str = json.dumps(st.secrets["textkey"])
-key_dict = json.loads(key_str)
-creds = Credentials.from_service_account_info(key_dict)
+# key_str = json.dumps(st.secrets["textkey"])
+# key_dict = json.loads(key_str)
+creds = Credentials.from_service_account_info(st.secrets["textkey"])
 db = firestore.Client(credentials=creds, project="app-tutor")
 
 TUTOR_MODEL = random.choice([True, False])
