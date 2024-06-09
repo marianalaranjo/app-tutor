@@ -252,15 +252,15 @@ if st.session_state.student != []:
     #             TUTOR_MODEL = False
 
     doc_ref = db.collection("logs").document(f"logTutor{id}")
-    doc_ref.set({"model": st.session_state.model,
-                 "student": st.session_state.student,
-                 "answers": st.session_state.answers,
-                 "score": st.session_state.score,
-                 "disabled": st.session_state.disabled,
-                 "setup": st.session_state.setup,
-                 "messages": st.session_state.messages,
-                 "history": st.session_state.history
-                 })
+    doc_ref.set({"model": True,
+                "student": "teste",
+                "answers": "teste",
+                "score": "30",
+                "disabled": False,
+                "setup": "teste",
+                "messages": "teste",
+                "history": "teste"
+                })
 
     # checkStudentExists(f"logs/logTutor{id}")
     # logSession(st.session_state, f"logs/logTutor{id}")
