@@ -253,7 +253,6 @@ if st.session_state.student != []:
 
     doc_ref = db.collection("logs")
     values = {"name": f"logTutor{id}",
-                "date": "{0} -- {1}\n".format(datetime.now().strftime("%Y-%m-%d %H:%M")),
                 "model": True,
                 "student": "teste",
                 "answers": "teste",
