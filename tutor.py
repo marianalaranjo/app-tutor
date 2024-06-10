@@ -12,12 +12,18 @@ from datetime import datetime
 import os.path
 from google.cloud import firestore
 from google.oauth2.service_account import Credentials
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
 
 ## CONFIG
 
 key_dict = json.loads(st.secrets["textkey"])
-creds = Credentials.from_service_account_info(key_dict)
-db = firestore.Client(credentials=creds, project="app-tutor-393a9")
+cred = credentials.Certificate(key_dict)
+
+app = firebase_admin.initialize_app(cred)
+
+db = firestore.client()
 
 TUTOR_MODEL = random.choice([True, False])
 
