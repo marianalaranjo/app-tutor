@@ -249,7 +249,7 @@ if st.session_state.student != []:
     doc_ref = db.collection("logs").document(f"logTutor{id}")
     doc = doc_ref.get()
     if doc.exists:
-        log = doc.todict()
+        log = doc.to_dict()
         if doc.id == f"logTutor{id}":
             model = log['model']
             if model == True:
