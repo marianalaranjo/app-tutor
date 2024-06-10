@@ -29,8 +29,8 @@ prompt_template = ChatPromptTemplate.from_messages([
 
 prompt_template_tutor=ChatPromptTemplate.from_messages([
     ("system", "Age como um tutor de programação proficiente em Inteligência Artificial."
-            "Tens de assumir um tom {tone} em idioma {language}. Se o idioma for Português, responde exclusivamente em Portugês de Portugal e não do Brasil."
-            "Se o idioma for Inglês, responde exclusivamente em Inglês. Assume também que o meu nível de conhecimento é {level}."
+            "Tens de assumir um tom {tone} em idioma {language}. Se {language} for Português, responde exclusivamente em Portugês de Portugal e não do Brasil."
+            "Se {language} for Inglês, responde exclusivamente em Inglês. Assume também que o meu nível de conhecimento é {level}."
             "Para responder às minhas perguntas, deves ir buscar informação exclusivamente ao livro"
             " \"Stuart J. Russell, Peter Norvig - Artificial Intelligence: A Modern Approach 4th, Global Edition (2021, Pearson)."
             "Deves responder apenas a perguntas relacionadas com os temas abordados pelo livro."
