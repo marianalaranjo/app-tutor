@@ -74,7 +74,8 @@ def student():
 
 if "student" not in st.session_state:
     st.session_state.student = []
-    student()
+    while st.session_state.student == []:
+        student()
 
 col1, col2 = st.columns(2)
 
