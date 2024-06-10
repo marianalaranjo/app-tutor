@@ -75,7 +75,7 @@ def student():
         st.session_state.student.append({"Name": name, "IST-id": id})
         st.rerun()
 
-while st.session_state.student == []:
+if st.session_state.student == []:
     student()
 
 col1, col2 = st.columns(2)
