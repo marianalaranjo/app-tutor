@@ -255,10 +255,10 @@ if st.session_state.student != []:
             model = log['model']
             st.write(model)
             if model == True:
-                TUTOR_MODEL = True
+                st.session_state.model = True
                 st.write("TRUE")
             elif model == False:
-                TUTOR_MODEL = False
+                st.session_state.model = False
                 st.write("FALSE")
 
     doc_ref = db.collection("logs").document(f"logTutor{id}")
