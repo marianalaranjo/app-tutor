@@ -73,7 +73,7 @@ def student():
     id = st.text_input("IST-id")
     if st.button("Submit"):
         st.session_state.student.append({"Name": name, "IST-id": id})
-        st.rerun()
+    st.rerun()
 
 if st.session_state.student == []:
     student()
