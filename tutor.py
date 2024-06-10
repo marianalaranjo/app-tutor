@@ -74,8 +74,6 @@ def student():
     if st.button("Submit"):
         st.session_state.student.append({"Name": name, "IST-id": id})
         st.rerun()
-    else:
-        student()
 
 if st.session_state.student == []:
     student()
