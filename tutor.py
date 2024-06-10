@@ -8,10 +8,7 @@ from langchain.callbacks.manager import CallbackManager
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain_core.prompts import MessagesPlaceholder
 from langchain_core.messages import HumanMessage, AIMessage
-from datetime import datetime
-import os.path
 from google.cloud import firestore
-from google.oauth2.service_account import Credentials
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
@@ -21,30 +18,9 @@ from firebase_admin import firestore
 key_dict = json.loads(st.secrets["textkey"])
 cred = credentials.Certificate(key_dict)
 
-#app = firebase_admin.initialize_app(cred)
-
 db = firestore.client()
 
 TUTOR_MODEL = random.choice([True, False])
-
-# def logSession(session_history, filename):
-#     f = open(filename, "a")
-#     f.write("{0} -- {1}\n".format(datetime.now().strftime("%Y-%m-%d %H:%M"), session_history))
-#     f.close()
-
-# def checkStudentExists(filename):
-#     if os.path.isfile(filename) is False:
-#         return
-#     with open(filename, 'r') as file_obj:
-#         first_char = file_obj.read(1)
-#         if not first_char:
-#             return
-#         else:
-#             lines = file_obj.readlines()
-#             if "'model': True" in lines[0]:
-#                 st.session_state.model = True
-#             elif "'model': False" in lines[0]:
-#                 st.session_state.model = False
 
 
 prompt_template = ChatPromptTemplate.from_messages([
@@ -245,21 +221,18 @@ with col2:
             st.session_state.history.append(AIMessage(content=ai_response))
             st.rerun()
 
+## LOGS
 if st.session_state.student != []:
     doc_ref = db.collection("logs").document(f"logTutor{id}")
     doc = doc_ref.get()
     if doc.exists:
         log = doc.to_dict()
         if doc.id == f"logTutor{id}":
-            st.write(doc.id)
             model = log['model']
-            st.write(model)
             if model == True:
                 st.session_state.model = True
-                st.write("TRUE")
             elif model == False:
                 st.session_state.model = False
-                st.write("FALSE")
 
     doc_ref = db.collection("logs").document(f"logTutor{id}")
     doc_ref.set({"model": st.session_state.model,
@@ -270,7 +243,4 @@ if st.session_state.student != []:
                 "setup": st.session_state.setup,
                 "messages": st.session_state.messages
                 })
-
-    # checkStudentExists(f"logs/logTutor{id}")
-    # logSession(st.session_state, f"logs/logTutor{id}")
 
