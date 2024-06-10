@@ -62,6 +62,9 @@ st.title("App Tutor")
 if "model" not in st.session_state:
     st.session_state.model = TUTOR_MODEL
 
+if "student" not in st.session_state:
+    st.session_state.student = []
+
 ## LOGIN
 @st.experimental_dialog("Login")
 def student():
@@ -72,9 +75,6 @@ def student():
         st.session_state.student.append({"Name": name, "IST-id": id})
         st.rerun()
 
-if "student" not in st.session_state:
-    st.session_state.student = []
-    
 while st.session_state.student == []:
     student()
 
