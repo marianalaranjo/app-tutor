@@ -246,16 +246,16 @@ with col2:
             st.rerun()
 
 if st.session_state.student != []:
-    # doc_ref = db.collection("logs").document("logTeste")
-    # doc = doc_ref.get()
-    # if doc.exists:
-    #     log = doc.todict()
-    #     if doc.id == f"logTutor{id}":
-    #         model = log['model']
-    #         if model == True:
-    #             TUTOR_MODEL = True
-    #         elif model == False:
-    #             TUTOR_MODEL = False
+    doc_ref = db.collection("logs").document(f"logTutor{id}")
+    doc = doc_ref.get()
+    if doc.exists:
+        log = doc.todict()
+        if doc.id == f"logTutor{id}":
+            model = log['model']
+            if model == True:
+                TUTOR_MODEL = True
+            elif model == False:
+                TUTOR_MODEL = False
 
     doc_ref = db.collection("logs").document(f"logTutor{id}")
     doc_ref.set({"model": st.session_state.model,
