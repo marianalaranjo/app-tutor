@@ -18,7 +18,8 @@ from firebase_admin import firestore
 key_dict = json.loads(st.secrets["textkey"])
 cred = credentials.Certificate(key_dict)
 
-app= firebase_admin.initialize_app(cred)
+firebase_admin.initialize_app()
+app = firebase_admin.initialize_app(cred)
 
 db = firestore.client()
 
