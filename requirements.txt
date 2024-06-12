@@ -2,5 +2,5 @@ langchain
 langchain-openai
 openai
 streamlit
-google-cloud-firestore
 firebase-admin
+google-cloud-firestore

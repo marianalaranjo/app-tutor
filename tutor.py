@@ -18,9 +18,10 @@ from firebase_admin import firestore
 key_dict = json.loads(st.secrets["textkey"])
 cred = credentials.Certificate(key_dict)
 
-app = firebase_admin.initialize_app(cred)
+firebase_admin.initialize_app(credential=cred)
+firebase_admin.get_app()
 
-db = firestore.Client()
+db = firestore.client()
 
 TUTOR_MODEL = random.choice([True, False])
 
