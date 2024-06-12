@@ -8,7 +8,7 @@ from langchain.callbacks.manager import CallbackManager
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain_core.prompts import MessagesPlaceholder
 from langchain_core.messages import HumanMessage, AIMessage
-#from google.cloud import firestore
+from google.cloud import firestore
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
@@ -18,7 +18,7 @@ from firebase_admin import firestore
 key_dict = json.loads(st.secrets["textkey"])
 cred = credentials.Certificate(key_dict)
 
-app = firebase_admin.initialize_app(cred)
+firebase_admin.initialize_app(cred)
 
 db = firestore.client()
 
