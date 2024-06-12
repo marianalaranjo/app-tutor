@@ -1,93 +1,93 @@
 [
     {
       "id": 1,
-      "questão": "Qual é o objetivo principal da inteligência artificial?",
-      "A": "Replicar a mente humana em sua totalidade.",
-      "B": "Desenvolver sistemas capazes de agir inteligentemente.",
-      "C": "Automatizar tarefas rotineiras semelhantes às humanas.",
-      "D": "Melhorar a eficiência dos computadores.",
-      "resposta": "Desenvolver sistemas capazes de agir inteligentemente."
+      "questão": "Qual é a importância da heurística de forward checking na resolução de problemas de satisfação de restrições?",
+      "A": "A heurística de forward checking garante a consistência arc em todos os arcos do problema.",
+      "B": "A heurística de forward checking reduz o espaço de procura ao eliminar valores inconsistentes do domínio das variáveis.",
+      "C": "A heurística de forward checking aumenta o número de restrições a serem verificadas.",
+      "D": "A heurística de forward checking não tem impacto na resolução de problemas de satisfação de restrições.",
+      "resposta": "A heurística de forward checking reduz o espaço de procura ao eliminar valores inconsistentes do domínio das variáveis."
     },
     {
       "id": 2,
-      "questão": "Qual é o principal desafio enfrentado no desenvolvimento de sistemas de inteligência artificial?",
-      "A": "Reproduzir emoções humanas.",
-      "B": "Alcançar a consciência artificial.",
-      "C": "Garantir a segurança dos sistemas inteligentes.",
-      "D": "Representar o conhecimento de forma eficaz.",
-      "resposta": "Garantir a segurança dos sistemas inteligentes."
+      "questão": "Como a heurística de Minimum Remaining Values (MRV) pode ser útil na resolução de problemas de satisfação de restrições? ",
+      "A": "A heurística MRV seleciona a variável mais restrita, o que reduz o espaço de procura.",
+      "B": "A heurística MRV seleciona a variável com o maior domínio, o que aumenta o espaço de procura.",
+      "C": "A heurística MRV seleciona a variável com o menor número de restrições, o que facilita a resolução do problema.",
+      "D": "A heurística MRV não é relevante para problemas de satisfação de restrições.",
+      "resposta": "A heurística MRV seleciona a variável mais restrita, o que reduz o espaço de procura."
     },
     {
       "id": 3,
-      "questão": "Qual é uma das áreas abordadas pelo livro?",
-      "A": "Teoria da Relatividade.",
-      "B": "Neurociência.",
-      "C": "Processamento de Linguagem Natural.",
-      "D": "Biologia Molecular.",
-      "resposta": "Processamento de Linguagem Natural."
+      "questão": "O que significa dizer que um CSP é consistente?",
+      "A": "Não possui solução.",
+      "B": "Possui uma única solução.",
+      "C": "Possui múltiplas soluções.",
+      "D": "Pelo menos uma solução pode ser encontrada.",
+      "resposta": "Pelo menos uma solução pode ser encontrada."
     },
     {
       "id": 4,
-      "questão": "O que é um agente inteligente?",
-      "A": "Qualquer programa de computador.",
-      "B": "Qualquer entidade capaz de perceber seu ambiente e agir sobre ele.",
-      "C": "Um humano com habilidades avançadas de resolução de problemas.",
-      "D": "Um robô com capacidade de autoconsciência.",
-      "resposta": "Qualquer entidade capaz de perceber seu ambiente e agir sobre ele."
+      "questão": "O que é uma heurística no contexto do planeamento em inteligência artificial? ",
+      "A": "Um algoritmo exato para resolver problemas de planeamento.",
+      "B": "Uma função de avaliação que estima o custo de alcançar um determinado estado.",
+      "C": "Um método para lidar com a incerteza nos resultados das ações.",
+      "D": "Um operador lógico para representar relações entre variáveis no ambiente.",
+      "resposta": "Uma função de avaliação que estima o custo de alcançar um determinado estado."
     },
     {
       "id": 5,
-      "questão": "O que é aprendizado de máquina?",
-      "A": "Um tipo de algoritmo que aprende com exemplos e experiência.",
-      "B": "Um método para programar computadores para que eles ajam como humanos.",
-      "C": "Um ramo da biologia que estuda como os seres vivos aprendem.",
-      "D": "Um sistema de computador que imita o processo de pensamento humano.",
-      "resposta": "Um tipo de algoritmo que aprende com exemplos e experiência."
+      "questão": "O que é um problema de planeamento com restrições temporais?",
+      "A": "Um problema em que as ações devem ser executadas numa sequência específica.",
+      "B": "Um problema em que as ações têm durações variáveis e dependências temporais.",
+      "C": "Um problema em que as ações têm custos associados que variam ao longo do tempo.",
+      "D": "Um problema em que as ações têm efeitos probabilísticos no ambiente.",
+      "resposta": "Um problema em que as ações têm durações variáveis e dependências temporais."
     },
     {
       "id": 6,
-      "questão": "Qual é o principal objetivo do aprendizado supervisionado?",
-      "A": "Descobrir padrões desconhecidos nos dados.",
-      "B": "Agrupar dados não rotulados.",
-      "C": "Aprender a partir de exemplos rotulados.",
-      "D": "Prever valores contínuos.",
-      "resposta": "Aprender a partir de exemplos rotulados."
+      "questão": "Qual é o objetivo principal do algoritmo de busca heurística A* em problemas de planeamento?",
+      "A": "Minimizar o custo total do caminho percorrido.",
+      "B": "Maximizar o número de ações executadas.",
+      "C": "Encontrar o caminho mais curto para o objetivo.",
+      "D": "Explorar todas as possibilidades de ações.",
+      "resposta": "Minimizar o custo total do caminho percorrido."
     },
     {
       "id": 7,
-      "questão": "O que é uma rede neural artificial?",
-      "A": "Um modelo matemático inspirado no funcionamento do cérebro humano.",
-      "B": "Um conjunto de regras lógicas que define o comportamento de um agente inteligente.",
-      "C": "Um tipo de linguagem de programação usada para criar sistemas inteligentes.",
-      "D": "Um algoritmo de busca usado para encontrar soluções para problemas complexos.",
-      "resposta": "Um modelo matemático inspirado no funcionamento do cérebro humano."
+      "questão": "Em problemas de planeamento, o que é a função de custo?",
+      "A": "Uma função que determina a probabilidade de sucesso de uma ação.",
+      "B": "Uma função que atribui um valor numérico às ações e estados do problema.",
+      "C": "Uma função que indica a quantidade de recursos disponíveis para o agente.",
+      "D": "Uma função que define o número de estados possíveis no problema.",
+      "resposta": "Uma função que atribui um valor numérico às ações e estados do problema."
     },
     {
       "id": 8,
-      "questão": "Qual é o principal desafio na tradução automática?",
-      "A": "Reconhecimento de voz.",
-      "B": "Compreensão e interpretação de texto.",
-      "C": "Síntese de voz.",
-      "D": "Processamento de imagens.",
-      "resposta": "Compreensão e interpretação de texto."
+      "questão": "O que significa dizer que um ambiente é parcialmente observável?",
+      "A": "O agente não tem acesso a todas as informações do ambiente.",
+      "B": "O ambiente está sempre em constante mudança.",
+      "C": "O agente possui sensores de alta precisão.",
+      "D": "O ambiente é determinístico.",
+      "resposta": "O agente não tem acesso a todas as informações do ambiente."
     },
     {
       "id": 9,
-      "questão": "O que é raciocínio lógico?",
-      "A": "Um método para resolver problemas baseado em algoritmos genéticos.",
-      "B": "Um tipo de aprendizado de máquina.",
-      "C": "Um processo de inferência baseado em regras.",
-      "D": "Um sistema de computador que imita o pensamento humano.",
-      "resposta": "Um processo de inferência baseado em regras."
+      "questão": "Como é que a abordagem de aprendizagem por reforço pode ser aplicada na resolução de problemas em ambientes complexos?",
+      "A": "Utilizando exemplos passados para orientar a solução de novos problemas semelhantes.",
+      "B": "Criando modelos matemáticos precisos para representar o conhecimento do domínio.",
+      "C": "Aprendendo a melhor estratégia de ação através da interação com o ambiente.",
+      "D": "Aplicando técnicas de otimização para encontrar a solução mais eficiente.",
+      "resposta": "Aprendendo a melhor estratégia de ação através da interação com o ambiente."
     },
     {
       "id": 10,
-      "questão": "O que é uma heurística?",
-      "A": "Um método para resolver problemas de forma aleatória.",
-      "B": "Um conjunto de regras lógicas que define o comportamento de um agente inteligente.",
-      "C": "Uma técnica de solução de problemas baseada em regras gerais.",
-      "D": "Uma estratégia ou técnica que fornece uma solução rápida e aproximada para um problema complexo.",
-      "resposta": "Uma estratégia ou técnica que fornece uma solução rápida e aproximada para um problema complexo."
+      "questão": "Quais são os principais desafios enfrentados na resolução de problemas em ambientes complexos que envolvem a tomada de decisões em tempo real?",
+      "A": "Cooperação e competição entre os agentes.",
+      "B": "Incerteza e imprecisão dos dados disponíveis.",
+      "C": "Dificuldade em representar o conhecimento do domínio de forma adequada.",
+      "D": "Falta de recursos computacionais para processar os dados em tempo hábil.",
+      "resposta": "Incerteza e imprecisão dos dados disponíveis."
     }
   ]
   
