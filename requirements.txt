@@ -3,4 +3,4 @@ langchain-openai
 openai
 streamlit
 google-cloud-firestore
-firebase-admin
+firebase-admin == 6.4.0
