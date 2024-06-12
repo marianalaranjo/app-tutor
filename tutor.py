@@ -15,10 +15,10 @@ from firebase_admin import firestore
 
 ## CONFIG
 
-key_dict = json.loads(st.secrets["textkey"])
-cred = credentials.Certificate(key_dict)
-
-app=firebase_admin.initialize_app(cred)
+if not firebase_admin._apps:
+    key_dict = json.loads(st.secrets["textkey"])
+    cred = credentials.Certificate(key_dict)
+    app=firebase_admin.initialize_app(cred)
 
 db = firestore.client()
 
