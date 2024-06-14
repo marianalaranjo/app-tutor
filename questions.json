@@ -3,10 +3,10 @@
       "id": 1,
       "questão": "Qual é a importância da heurística de forward checking na resolução de problemas de satisfação de restrições?",
       "A": "A heurística de forward checking garante a consistência arc em todos os arcos do problema.",
-      "B": "A heurística de forward checking reduz o espaço de procura ao eliminar valores inconsistentes do domínio das variáveis.",
+      "B": "A heurística de forward checking reduz o espaço de procura ao eliminar valores inconsistentes do domínio das variáveis, à medida que novas atribuições são feitas.",
       "C": "A heurística de forward checking aumenta o número de restrições a serem verificadas.",
       "D": "A heurística de forward checking não tem impacto na resolução de problemas de satisfação de restrições.",
-      "resposta": "A heurística de forward checking reduz o espaço de procura ao eliminar valores inconsistentes do domínio das variáveis."
+      "resposta": "A heurística de forward checking reduz o espaço de procura ao eliminar valores inconsistentes do domínio das variáveis, à medida que novas atribuições são feitas."
     },
     {
       "id": 2,
@@ -19,12 +19,12 @@
     },
     {
       "id": 3,
-      "questão": "O que significa dizer que um CSP é consistente?",
-      "A": "Não possui solução.",
-      "B": "Possui uma única solução.",
-      "C": "Possui múltiplas soluções.",
-      "D": "Pelo menos uma solução pode ser encontrada.",
-      "resposta": "Pelo menos uma solução pode ser encontrada."
+      "questão": "Quais são as vantagens e desvantagens da abordagem de consistência de arco (arc consistency) na resolução de problemas de satisfação de restrições?",
+      "A": "Vantagem: reduz o espaço de busca; Desvantagem: pode ser computacionalmente custoso.",
+      "B": "Vantagem: garante a solução ótima; Desvantagem: não é eficiente para problemas grandes.",
+      "C": "Vantagem: facilita a implementação de heurísticas; Desvantagem: não garante a consistência global.",
+      "D": "Vantagem: elimina a necessidade de heurísticas; Desvantagem: não é eficaz para problemas complexos.",
+      "resposta": "Vantagem: reduz o espaço de busca; Desvantagem: pode ser computacionalmente custoso."
     },
     {
       "id": 4,
@@ -46,21 +46,21 @@
     },
     {
       "id": 6,
-      "questão": "Qual é o objetivo principal do algoritmo de busca heurística A* em problemas de planeamento?",
-      "A": "Minimizar o custo total do caminho percorrido.",
+      "questão": "Qual é o objetivo principal do algoritmo de procura informada A*?",
+      "A": "Encontrar o caminho mais curto entre um ponto de partida e um ponto de destino, minimizando o custo total do caminho.",
       "B": "Maximizar o número de ações executadas.",
       "C": "Encontrar o caminho mais curto para o objetivo.",
       "D": "Explorar todas as possibilidades de ações.",
-      "resposta": "Minimizar o custo total do caminho percorrido."
+      "resposta": "Encontrar o caminho mais curto entre um ponto de partida e um ponto de destino, minimizando o custo total do caminho."
     },
     {
       "id": 7,
-      "questão": "Em problemas de planeamento, o que é a função de custo?",
+      "questão": "Em problemas de procura, o que é a função de custo?",
       "A": "Uma função que determina a probabilidade de sucesso de uma ação.",
-      "B": "Uma função que atribui um valor numérico às ações e estados do problema.",
+      "B": "Uma função que atribui um custo às ações e estados do problema.",
       "C": "Uma função que indica a quantidade de recursos disponíveis para o agente.",
       "D": "Uma função que define o número de estados possíveis no problema.",
-      "resposta": "Uma função que atribui um valor numérico às ações e estados do problema."
+      "resposta": "Uma função que atribui um custo às ações e estados do problema."
     },
     {
       "id": 8,
