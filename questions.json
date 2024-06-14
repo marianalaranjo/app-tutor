@@ -20,11 +20,11 @@
     {
       "id": 3,
       "questão": "Quais são as vantagens e desvantagens da abordagem de consistência de arco (arc consistency) na resolução de problemas de satisfação de restrições?",
-      "A": "Vantagem: reduz o espaço de busca; Desvantagem: pode ser computacionalmente custoso.",
+      "A": "Vantagem: reduz o espaço de procura; Desvantagem: pode ser computacionalmente custoso.",
       "B": "Vantagem: garante a solução ótima; Desvantagem: não é eficiente para problemas grandes.",
       "C": "Vantagem: facilita a implementação de heurísticas; Desvantagem: não garante a consistência global.",
       "D": "Vantagem: elimina a necessidade de heurísticas; Desvantagem: não é eficaz para problemas complexos.",
-      "resposta": "Vantagem: reduz o espaço de busca; Desvantagem: pode ser computacionalmente custoso."
+      "resposta": "Vantagem: reduz o espaço de procura; Desvantagem: pode ser computacionalmente custoso."
     },
     {
       "id": 4,
